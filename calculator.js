@@ -14,3 +14,7 @@ let num2=0;
 let operator=''; 
 // use square brackets: operators[operator]
 
+const operate = function(num1, num2, operator){
+    const operation=operators[operator];
+    return operation(num1,num2);
+}
