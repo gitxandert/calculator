@@ -1,15 +1,22 @@
 body{
     display:flex;
     justify-content: center;
+    background-color: #92D87E;
+    padding: 20px;
 }
 
 #container{
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 330px;
+    border: 2px solid black;
     gap: 16px;
     flex-direction:column;
-    width: 220px;
+    width: 250px;
+    background-color: #9055B4;
+    border-radius: 8px;
 }
 
 #interactive{
@@ -40,4 +47,8 @@ body{
     height: 33px;
     font-size: 20px;
     text-align: center;
+}
+
+button{
+    border-radius: 4px;
 }
