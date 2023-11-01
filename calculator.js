@@ -20,7 +20,7 @@ const operate = function(num1, num2, operator){
 }
 
 const display = document.querySelector('#display');
-display.setAttribute('style', 'border: 1px solid black; padding: 8px 8px 0px;height: 50px; border-radius: 2px; font-size: 30px; vertical-align: center;');
+display.setAttribute('style', 'border: 2px solid black; padding: 8px 8px 0px;height: 50px; width: 200px; background-color: #f0f0f0; border-radius: 4px; font-size: 30px; vertical-align: center;');
 display.textContent = '';
 
 const numbers = document.querySelector('#numbers');
