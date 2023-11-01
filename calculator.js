@@ -18,7 +18,10 @@ const operate = function(num1, num2, operator){
     const operation=operators[operator];
     num1=parseFloat(num1);
     num2=parseFloat(num2);
-    return operation(num1,num2);
+    let string = operation(num1,num2);
+    string = string.toString();
+    let rounded = string.slice(0,11);
+    return rounded;
 }
 
 const display = document.querySelector('#display');
@@ -83,30 +86,45 @@ clrBtn.addEventListener('click', () =>{
 
 const addBtn = document.querySelector('#add');
 addBtn.addEventListener('click', () =>{
+    if(operator!==''){
+        num1=operate(num1,num2,operator);
+        display.textContent = num1;
+    }
     operator = addBtn.id;
     display.textContent += ' + ';
 })
 
 const subBtn = document.querySelector('#subtract');
 subBtn.addEventListener('click', () =>{
+    if(operator!==''){
+        num1=operate(num1,num2,operator);
+        display.textContent = num1;
+    }
     operator = subBtn.id;
     display.textContent += " - ";
 })
 
 const multBtn = document.querySelector('#multiply');
 multBtn.addEventListener('click', () =>{
+    if(operator!==''){
+        num1=operate(num1,num2,operator);
+        display.textContent = num1;
+    }
     operator = multBtn.id;
     display.textContent += ' x ';
 })
 
 const divBtn = document.querySelector('#divide');
 divBtn.addEventListener('click', () =>{
+    if(operator!==''){
+        num1=operate(num1,num2,operator);
+        display.textContent = num1;
+    }
     operator = divBtn.id;
     display.textContent += ' / ';
 })
 
 const eqBtn = document.querySelector('#equals');
 eqBtn.addEventListener('click', () => {
-    display.textContent += ' = ' + operate(num1,num2,operator);
-    console.log(num1,num2);
+    display.textContent = operate(num1,num2,operator);
 })
