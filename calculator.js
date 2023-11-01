@@ -89,6 +89,7 @@ addBtn.addEventListener('click', () =>{
     if(operator!==''){
         num1=operate(num1,num2,operator);
         display.textContent = num1;
+        num2='';
     }
     operator = addBtn.id;
     display.textContent += ' + ';
@@ -99,6 +100,7 @@ subBtn.addEventListener('click', () =>{
     if(operator!==''){
         num1=operate(num1,num2,operator);
         display.textContent = num1;
+        num2='';
     }
     operator = subBtn.id;
     display.textContent += " - ";
@@ -109,6 +111,7 @@ multBtn.addEventListener('click', () =>{
     if(operator!==''){
         num1=operate(num1,num2,operator);
         display.textContent = num1;
+        num2='';
     }
     operator = multBtn.id;
     display.textContent += ' x ';
@@ -119,6 +122,7 @@ divBtn.addEventListener('click', () =>{
     if(operator!==''){
         num1=operate(num1,num2,operator);
         display.textContent = num1;
+        num2='';
     }
     operator = divBtn.id;
     display.textContent += ' / ';
@@ -126,5 +130,16 @@ divBtn.addEventListener('click', () =>{
 
 const eqBtn = document.querySelector('#equals');
 eqBtn.addEventListener('click', () => {
-    display.textContent = operate(num1,num2,operator);
+    if(num2===''){
+        return;
+    }else if(parseInt(num2)===0){
+        display.textContent = '';
+        num1 = '';
+        num2 = '';
+        operator = '';
+        console.log(operator);
+        alert('Cannot divide by 0!!');
+    }else{
+        display.textContent = operate(num1,num2,operator);
+    }
 })
